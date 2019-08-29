@@ -13,6 +13,10 @@ app.use(bodyParser.json())
 var router = require('./routes');
 router(app);
 
+// mongoose连接方法
+var mongo = require('./lib/mongo');
+mongo();
+
 // 打开任何网址其本质都是一个get请求到的一个页面
 // 我们访问的百度https://www.baidu.com/ 其实后面也有一个/
 // 也就是访问百度服务器的/接口，它返回一个html页面
