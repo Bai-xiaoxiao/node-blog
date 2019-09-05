@@ -9,11 +9,18 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res){
+    // 查询用户表
     user.find(req.body, function(data){
         if(!data){
             res.redirect('/err?msg=账户名或密码错误');
             return;
         }
+        // 保存session
+        // 登录之后可以查询出整个用户信息存到session中
+        // 其他地方要用的话可以直接从session中取，不用重复获取信息
+        req.session.userName = data.userName;
+        req.session._id = data._id;
+        
         res.redirect('/home');
     });
     // if(req.body.userName === 'admin' && req.body.password == '123456'){
