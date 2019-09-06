@@ -4,7 +4,7 @@ var http = require("http");
 
 router.get('/', function (req, res) {
     // 在home页去调用articel的list接口
-    http.get('http://localhost:8888/articel/list?pageSize=5', function (req2, res2) {
+    http.get('http://localhost:8888/articel/list?pageSize=10&authorId=' + req.session._id, function (req2, res2) {
         var jsonData = '';
         req2.on('data', function (data) {
             // 每次请求到的Buffer加进去
