@@ -69,7 +69,8 @@ mongo();
 // 也就是访问百度服务器的/接口，它返回一个html页面
 // 我们网页的/路径的get请求
 app.get('/', (req, res) => {
-    res.end('hello world');
+    // res.end('hello world');
+    res.redirect('/home');
 });
 
 app.set('views', path.join(__dirname, 'views')); // 设置存放模板文件的目录

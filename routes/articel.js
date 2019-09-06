@@ -28,7 +28,7 @@ router.post('/publish', function (req, res) {
     req.body.authorId = req.session._id;
     req.body.authorName = req.session.userName;
     articel.add(req.body, function (data) {
-        res.end('success');
+        res.redirect('/');
     });
 });
 
