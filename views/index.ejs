@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>白小东的个人博客</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- animate -->
+        <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="/public/css/index.css" type="text/css">
+</head>
+
+<body class="">
+    <!-- 顶部banner -->
+    <header class="text-center bg-info">
+        <!-- <h1>Do u like Van♂ 游戏 <small class="hidden-xs">白小东的小站</small></h1> -->
+        <h1>Do u like Van♂ 游戏 <br />
+            <small class="hidden-xs block">白小东的小站</small>
+        </h1>
+        <img class="hidden-xs" src="/public/imgs/lading.gif" alt="">
+    </header>
+    <div class="bg-danger">
+        <menu class="clearfix container">
+            <ul class="list-inline row text-center">
+                <li class="col-xs-6 col-sm-2"><a href="">首页</a></li>
+                <li class="col-xs-6 col-sm-2"><a href="">美食美味</a></li>
+                <li class="col-xs-6 col-sm-2"><a href="">技术杂谈</a></li>
+                <li class="col-xs-6 col-sm-2"><a href="">灵异鬼物</a></li>
+                <li class="col-xs-6 col-sm-2"><a href="">邋遢生活</a></li>
+                <li class="col-xs-6 col-sm-2"><a href="">给我留言</a></li>
+            </ul>
+        </menu>
+    </div>
+    <section class="container">
+
+    </section>
+    <!-- 底部 -->
+    <footer>
+
+    </footer>
+</body>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+<script src="/public/js/layer/layer.js"></script>
+<script>
+    //询问框
+    if (!localStorage.isOld) {
+        localStorage.isOld = true;
+        layer.confirm('你是第一次来本站吗？', {
+            btn: ['我是萌新', '我是老司机'] //按钮
+        }, function () {
+            layer.closeAll();
+            layer.photos({
+                area: '500px',
+                photos: {
+                    "title": "Van♂ 游戏", //相册标题
+                    "data": [   //相册包含的图片，数组格式
+                        {
+                            "alt": "欢迎",
+                            "src": "/public/imgs/welcome.jpg", //原图地址
+                        }
+                    ]
+                } //格式见API文档手册页
+            });
+        });
+    }
+
+    // 菜单hover样式
+    $('menu a').hover(function(){
+        $(this).addClass('bounce animated');
+    }, function(){
+        $(this).removeClass('bounce animated');
+    });
+</script>
+
+</html>

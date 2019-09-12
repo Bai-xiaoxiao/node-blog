@@ -70,11 +70,14 @@ mongo();
 // 我们网页的/路径的get请求
 app.get('/', (req, res) => {
     // res.end('hello world');
-    res.redirect('/home');
+    // res.redirect('/home');
+    res.redirect('/index');
 });
 
 app.set('views', path.join(__dirname, 'views')); // 设置存放模板文件的目录
 app.set('view engine', 'ejs'); // 设置模板引擎为 ejs
+// 静态资源无法访问，加这个
+app.use(express.static(__dirname + '/'));
 
 // 开启一个服务,监听8888端口
 app.listen(8888, () => {

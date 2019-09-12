@@ -1,0 +1,47 @@
+// 顶部主题
+header{
+    position: relative;
+    h1{
+        margin: 0;
+        line-height: 80px;
+    }
+    small{
+        margin-left: 20px;
+        line-height: 40px;
+    }
+    // background-image: url(/public/imgs/welcome.jpg);
+    // background-image: url(/public/imgs/lading.gif);
+    // background-repeat: no-repeat;
+    // background-position: bottom right;
+    // background-size: auto 100%;
+    img{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+    }
+}
+
+// 导航菜单
+menu{
+    margin: 0;
+    ul{
+        margin: 0;
+        line-height: 40px;
+        a{
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            color: #000;
+        }
+        a:hover{
+            color: #000;
+            text-decoration: underline;
+        }
+    }
+}
+@media (max-width: 768px) {
+    menu{
+        padding: 0;
+    }
+}
